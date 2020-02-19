@@ -12,12 +12,12 @@ PS C:\Users\Juan Esteban Gallo\Desktop\Archivos\ejercicios> notepad archivo2.txt
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Archivos\ejercicios> Compare-Object -ReferenceObject (Get-Content .\archivo1.txt) -DifferenceObject (Get-Content .\archivo2.txt)
 
-``
+```
 InputObject                           SideIndicator
 
 Contenido dos completamente diferente =>           
 Contenido 1                           <=           
-``
+```
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Archivos\ejercicios> 
 
@@ -26,12 +26,12 @@ PS C:\Users\Juan Esteban Gallo\Desktop\Archivos\ejercicios>
 out-file : No se puede procesar el argumento porque el valor del argumento "path" es NULL. Cambie el valor del argumento "path" a un valor no nulo.
 En línea: 1 Carácter: 42
 
-``
+```
 + get-service | export-csv servicios.csv | out-file
 +                                          ~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Out-File], PSArgumentNullException
     + FullyQualifiedErrorId : ArgumentNull,Microsoft.PowerShell.Commands.OutFileCommand
-``
+```
 Primeramente se puede ver un error de que no existe un path especificado para out-file.
 Ademas de que el | al reaclizar un proceso de exportacion no retorna ningun objeto en el que se pueda trabajar.
 
@@ -55,7 +55,7 @@ en el nombre, por tanto no entras en el error de sobre escribir un archivo por e
 
 Esto permite no crear el archivo si ya existe en el directorio.
 
-``
+```
 PS C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos> Get-Process | Export-Csv procesos.csv -NoClobber
 
 Export-Csv : El archivo 'C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos\procesos.csv' ya existe.
@@ -64,7 +64,7 @@ En línea: 1 Carácter: 15
     + CategoryInfo          : ResourceExists: (C:\Users\Juan E...os\procesos.csv:String) [Export-Csv], IOException
     + FullyQualifiedErrorId : NoClobber,Microsoft.PowerShell.Commands.ExportCsvCommand
 	
-``
+```
  
 5.
 El comando que podriamos utilizar para cambiar la lista de idiomas , especificando un nuevo idioma de listas a utilizar.
@@ -112,13 +112,13 @@ martes, 18 de febrero de 2020 11:03:57
 Retorna un DateTime objet que representa la fecha actual o una fecha que usted especifica.
 
 
-``
+```
 PS C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos> (get-date).GetType()
 
 IsPublic IsSerial Name                                     BaseType                                                                                                                                      
 -------- -------- ----                                     --------                                                                                                                                      
 True     True     DateTime                                 System.ValueType 
-``
+```
 
 9.
 
@@ -139,7 +139,7 @@ el sistema, comúnmente conocida como actualización de ingeniería rápida (QFE
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos> Get-WmiObject Win32_QuickFixEngineering 
 
-``
+```
 Source        Description      HotFixID      InstalledBy          InstalledOn              
 ------        -----------      --------      -----------          -----------              
 PLUR          Update           KB4534132     NT AUTHORITY\SYSTEM  14/02/2020 0:00:00       
@@ -151,7 +151,7 @@ PLUR          Security Update  KB4528759     NT AUTHORITY\SYSTEM  20/01/2020 0:0
 PLUR          Security Update  KB4537759     NT AUTHORITY\SYSTEM  14/02/2020 0:00:00       
 PLUR          Security Update  KB4538674     NT AUTHORITY\SYSTEM  14/02/2020 0:00:00       
 PLUR          Update           KB4532693     NT AUTHORITY\SYSTEM  14/02/2020 0:00:00       
-``
+```
 
 11.
 
@@ -160,7 +160,7 @@ Comando utilizado
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos>  Get-WmiObject Win32_QuickFixEngineering | Select-Object -Property InstalledOn, CSName ,HotFixID
 
-``
+```
 InstalledOn        CSName HotFixID 
 -----------        ------ -------- 
 14/02/2020 0:00:00 PLUR   KB4534132
@@ -172,7 +172,7 @@ InstalledOn        CSName HotFixID
 14/02/2020 0:00:00 PLUR   KB4537759
 14/02/2020 0:00:00 PLUR   KB4538674
 14/02/2020 0:00:00 PLUR   KB4532693
-``
+```
 12.
 
 El comando utilizado fue el siguiente 
@@ -190,7 +190,7 @@ El comando utilizado fue el siguiente
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Taller PoweShell\Archivos> Get-EventLog -LogName system -Newest 50| Sort-Object -Property TimeWritten,Index | Select-Object -Property Index, TimeWritten, Source
 
-``
+```
 Index TimeWritten         Source                       
 ----- -----------         ------                       
 80988 18/02/2020 12:57:34 Microsoft-Windows-WHEA-Logger
@@ -243,7 +243,7 @@ Index TimeWritten         Source
 81035 18/02/2020 13:19:25 Microsoft-Windows-WHEA-Logger
 81036 18/02/2020 13:19:52 Microsoft-Windows-WHEA-Logger
 81037 18/02/2020 13:19:52 Microsoft-Windows-WHEA-Logger
-``
+```
 
 
 
