@@ -2,6 +2,8 @@
 
 En este archivo md se encuentra el desarrollo de las preguntas del taller de PowerShell.
 
+Mi nombre es Juan Esteban Gallo y mi código A00134556
+
 # PRIMERA
 
 PS C:\Users\Juan Esteban Gallo\Desktop\Archivos> cd .\ejercicios
